@@ -9,12 +9,6 @@ public class Feather : MonoBehaviour
     Mesh mesh;
     Vector3[] vertices;
     int[] triangles;
-    int upWidth = 4;
-    int rachisBend = 2;
-    int downSweep = 2;
-    int upSweep = 6;
-    int tipWidth = 3;
-    int tipLength = 1;
 
     void Awake () {
         mesh = GetComponent<MeshFilter> ().mesh;
@@ -27,13 +21,20 @@ public class Feather : MonoBehaviour
     }
 
 
+    int upSweep = 2;
+    int upWidth = 4;
+    int rachisBend = 2;
+    int downSweep = 6;
+    int tipWidth = 3;
+    int length = 7;
+
     void MakeMeshData () {
         vertices = new Vector3[] {
             new Vector3(0,0,0),
-            new Vector3(0,0,1), // mid rachis
-            new Vector3(2,0,1), // up edge
-            new Vector3(1,0,4), // down edge
-            new Vector3(0,0,5)
+            new Vector3(0,0,rachisBend), // mid rachis
+            new Vector3(upWidth,0,upSweep), // up edge
+            new Vector3(tipWidth,0,downSweep), // down edge
+            new Vector3(0,0,length)
         };
 
         int distalUmbilicus = 0;
@@ -41,6 +42,7 @@ public class Feather : MonoBehaviour
         int upEdge = 2;
         int downEdge = 3;
         int tip = 4;
+        int leftUpEdge = 5;
 
         triangles = new int[] {
             distalUmbilicus,
