@@ -43,10 +43,11 @@ public class Feather : MonoBehaviour
         };
 
         scale = new Vector3(0.12f, 0.12f, 0.12f);
-
+        position = new Vector3(-8,-70,255);
+        
         for (int i = 0; i < vertices.Length; i++)
         {
-            vertices[i].Scale(scale);
+            vertices[i] = Vector3.Scale(vertices[i], scale) + position;
         }
 
         // scale vertices by 0.12745
