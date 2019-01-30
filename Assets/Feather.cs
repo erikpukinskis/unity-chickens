@@ -28,33 +28,9 @@ public class Feather : MonoBehaviour
 
 
     void MakeMeshData () {
-        vertices = new Vector3[] {
-            new Vector3(0,0,0),
-            new Vector3(upWidth, upSweep, 0),
-            new Vector3(0, rachisBend, 0),
-            new Vector3(tipWidth, downSweep, 0),
-            new Vector3(0, downSweep + tipLength)
-        };
+        vertices = new Vector3[] { new Vector3(0,0,0), new Vector3(0,0,1), new Vector3(1,0,0) };
 
-
-        int distalUmbilicus = 0;
-        int upEdge = 1;
-        int midRachis = 2; 
-        int downEdge = 3;
-        int tip = 4;
-
-        triangles = new int[] { distalUmbilicus,
-            upEdge,
-            midRachis,
-
-            midRachis,
-            upEdge,
-            downEdge,
-
-            midRachis,
-            downEdge,
-            tip,
-        };
+        triangles = new int[] { 0, 1, 2 };
     }
 
     void CreateMesh () {
